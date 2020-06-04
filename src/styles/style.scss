@@ -1,0 +1,155 @@
+
+
+$font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$primary-color: #ffffff;
+
+//Colors
+$white: #fff;
+$black: #000;
+$maroon: #83333e;
+$off-white: #f2f4f5;
+$off-black: #030000;
+
+html, body {
+  font-family: $font;
+  font-size: 16px;
+  color: $primary-color;
+}
+
+//cleanup
+.container {
+    width: 1640px;
+    min-width: 1640px;
+    margin: 0 auto;
+    @media(max-width: 1440px) {
+        width: 1280px;
+        min-width: 1280px;
+    }
+    @media(max-width: 1280px) {
+        width: 976px;
+        min-width: 976px;
+    }
+    @media(max-width: 976px) {
+        width: 768px;
+        min-width: 768px;
+    }
+}
+
+//Header
+header {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .logo {
+            a {
+                font-weight: 700;
+                text-decoration: none;
+                letter-spacing: 1.5px;
+                color: $black;
+            }
+        }
+        .navigation {
+            nav {
+                a {
+                    margin: 0 20px;
+                    text-decoration: none;
+                    letter-spacing: 1.75px;
+                    //text-transform: lowercase;
+                    font-size: 0.75rem;
+                    color: $black;
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Banner
+.banner {
+    height: 100vh;
+    width: 100%;
+    top: 0px;
+
+    background-color: fuchsia;
+    .main-text {
+        position: absolute;
+        font-size: 5.8rem;
+        font-weight: 700;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50);
+        text-align: center;
+        z-index: 10;
+    }
+
+    .parallax-image {
+        position: relative;
+        z-index: 0;
+        .wrapper {
+            position: absolute;
+            //height: 50px;
+            width: 100%;
+        }
+    }
+
+    .blur {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background-color: #030000;
+        bottom: 0%;
+        z-index: 20;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#999999+0,030000+100&0+0,1+100 */
+        background: -moz-linear-gradient(top,  rgba(153,153,153,0) 0%, rgba(3,0,0,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#030000',GradientType=0 ); /* IE6-9 */
+
+
+    }
+}
+
+//index-blurb
+.about-blurb {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    top: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $off-black;
+    .image-boxes {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        .image-box-wrapper {
+            height: 220px;
+            width: 150px;
+            text-align: center;
+            position: relative;
+            img {
+                max-width: 100%;
+                width: 100%;
+                max-height: 100%;
+                height: 100%;
+            }
+            h4 {
+
+            }
+        }
+    }
+}
