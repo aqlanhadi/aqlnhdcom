@@ -89,16 +89,21 @@ header {
         top: 50%;
         transform: translateY(-50);
         text-align: center;
-        z-index: 10;
+        z-index: 1;
     }
 
     .parallax-image {
         position: relative;
-        z-index: 0;
         .wrapper {
             position: absolute;
             //height: 50px;
             width: 100%;
+        }
+        .fourth, .third {
+            z-index: 0;
+        }
+        .second, .first {
+            z-index: 2;
         }
     }
 
@@ -108,7 +113,7 @@ header {
         height: 200px;
         background-color: #030000;
         bottom: 0%;
-        z-index: 20;
+        z-index: 2;
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#999999+0,030000+100&0+0,1+100 */
         background: -moz-linear-gradient(top,  rgba(153,153,153,0) 0%, rgba(3,0,0,1) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
