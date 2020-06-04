@@ -2,14 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image/withIEPolyfill'
 
-import gsap, { TweenMax, TimelineMax } from 'gsap'
-import * as ScrollMagic from 'scrollmagic'
-import { CSSPlugin } from 'gsap/CSSPlugin'
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap'
-
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax)
-
-gsap.registerPlugin( CSSPlugin )
+import { ScrollScene } from 'scrollscene'
+import { gsap } from 'gsap'
 
 const Banner = () => {
     const data = useStaticQuery(graphql`
@@ -29,56 +23,56 @@ const Banner = () => {
         }
     `)
     
-    let layer1 = useRef(null)
-    let layer2 = useRef(null)
-    let layer3 = useRef(null)
-    let layer4 = useRef(null)
+    let component = useRef()
+    let layer1 = useRef()
+    let layer2 = useRef()
+    let layer3 = useRef()
+    let layer4 = useRef()
     let bannerText = useRef()
     let sectionBlur = useRef()
-    let blurb = useRef()
 
     useEffect(() => {
-        let controller = new ScrollMagic.Controller();
-        let timeline = new TimelineMax()
-        timeline.to(
-            layer4.current.imageRef.current,{
-                duration: 10,
-                y: -100
-            }).to(
-            layer3.current.imageRef.current,{
-                duration: 10,
-                y: -300
-            }, '-=10').to(
-            layer2.current.imageRef.current,{
-                duration: 10,
-                y: -400
-            }, '-=10').to(
-            layer1.current.imageRef.current,{
-                duration: 10,
-                y: -500
-            }, '-=10').to(
-                bannerText.current, {
-                    duration: 10,
-                    y: -600
-                }, '-=10'
-            ).to(
-                sectionBlur.current, {
-                    duration: 10,
-                    y: -500
-                }, '-=10'
-            )
-        
-        let scene = new ScrollMagic.Scene({
-            duration: '200%',
-            triggerHook: 0
-        })
-        .setTween(timeline)
-        .addTo(controller)
 
+        const tl = gsap.timeline()
+        tl
+        .to(layer4.current.imageRef.current, {
+            duration: 6,
+            y: 700
+        })
+        .to(layer3.current.imageRef.current, {
+            duration: 6,
+            y: 500
+        }, '-=6')
+        .to(bannerText.current, {
+            duration: 6,
+            y: 700
+        }, '-=6')
+        .to(layer2.current.imageRef.current, {
+            duration: 6,
+            y: 200
+        }, '-=6')
+        .to(layer1.current.imageRef.current, {
+            duration: 6,
+            y: 100
+        }, '-=6')
+        .to(sectionBlur.current, {
+            duration: 6,
+            y: 0
+        }, '-=6')
+        
+        const sc = new ScrollScene({
+            triggerElement: component.current,
+            gsap: {
+                timeline: tl,
+            },
+            duration: '200%',
+            triggerHook: 0,
+            controller: {}
+        })
     })
     
     return (
-        <div className="banner">
+        <div ref={component} className="banner">
             <div ref={bannerText} className="main-text">Visuals.</div>
             <div className="parallax-image">
                 <div className="wrapper fourth">
