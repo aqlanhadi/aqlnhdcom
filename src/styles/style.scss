@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 $font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 $primary-color: #ffffff;
@@ -49,9 +49,9 @@ header {
         height: 80px;
         .logo {
             a {
+                font-size: 1.2rem;
                 font-weight: 700;
                 text-decoration: none;
-                letter-spacing: 1.5px;
                 color: $black;
             }
         }
@@ -60,9 +60,7 @@ header {
                 a {
                     margin: 0 20px;
                     text-decoration: none;
-                    letter-spacing: 1.75px;
-                    //text-transform: lowercase;
-                    font-size: 0.75rem;
+                    font-size: 1rem;
                     color: $black;
                     &:last-child {
                         margin-right: 0px;
@@ -73,13 +71,65 @@ header {
     }
 }
 
+//footer
+footer {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    .footer-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .left {
+            display: flex;
+            .big {
+                height: 100%;
+                align-self: end;
+                margin: 0 20px;
+                font-size: 3rem;
+                font-weight: 700;
+            }
+            .small {
+                align-self: flex-end;
+                height: 100%;
+                text-decoration: none;
+                color: $white;
+                
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+            
+        }
+        .socials {
+            nav {
+                a {
+                    margin: 0 20px;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: $white;
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 //Banner
 .banner {
     height: 100vh;
     width: 100%;
     top: 0px;
+    position: relative;
 
-    background-color: fuchsia;
+    background-color:$off-white;
     .main-text {
         position: absolute;
         font-size: 5.8rem;
@@ -105,55 +155,96 @@ header {
         .second, .first {
             z-index: 2;
         }
+
+        .blur {
+            //position: absolute;
+            width: 100%;
+            height: 200px;
+            background-color: #030000;
+            
+            bottom: 0%;
+            z-index: 3;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#999999+0,030000+100&0+0,1+100 */
+            background: -moz-linear-gradient(top,  rgba(153,153,153,0) 0%, rgba(3,0,0,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#030000',GradientType=0 ); /* IE6-9 */
+    
+    
+        }
     }
-
-    .blur {
-        position: absolute;
-        width: 100%;
-        height: 200px;
-        background-color: #030000;
-        bottom: 0%;
-        z-index: 2;
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#999999+0,030000+100&0+0,1+100 */
-        background: -moz-linear-gradient(top,  rgba(153,153,153,0) 0%, rgba(3,0,0,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#030000',GradientType=0 ); /* IE6-9 */
-
-
-    }
+    
 }
 
 //index-blurb
 .about-blurb {
-    height: 100%;
+    height: 100vh;
+    margin-top: -10vh;
     width: 100%;
     z-index: 0;
-    top: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $off-black;
-    .image-boxes {
-        width: 70%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        .image-box-wrapper {
-            height: 220px;
-            width: 150px;
-            text-align: center;
-            position: relative;
-            img {
-                max-width: 100%;
-                width: 100%;
-                max-height: 100%;
-                height: 100%;
-            }
-            h4 {
+    //transform: translateY(-10vh);
+    position: relative;
+    //background-color: $off-black;
 
+    background: -moz-linear-gradient(top,  rgba(153,153,153,0) 0%, rgba(3,0,0,1) 30vh); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 30vh); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(153,153,153,0) 0%,rgba(3,0,0,1) 30vh); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#030000',GradientType=0 ); /* IE6-9 */
+
+    z-index: 3;
+    .container {
+        height: 100%;
+        .inner-container{
+            //transform: translateY(10%);
+            display: flex;
+            flex-wrap: wrap;
+            width: 75%;
+            justify-content: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            .image-container {
+            
+                display: flex;
+                flex-wrap: wrap;
+                .row{
+                    display: flex;
+                    justify-content: center;
+
+                    .image-box-wrapper {
+                        margin: 10px;
+                        position: relative;
+                        justify-content: center;
+                        flex-direction: column;
+                        height: 18vh;
+                        width: 45%;
+                        object-fit: cover;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        img {
+                            
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;                           
+                            opacity: 0;
+                        }
+                        h4 {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 1.8rem;
+                            letter-spacing: 1.75px;
+                        }
+                    }
+                }
+            }
+            .text-blurb {
+                text-align: center;
+                padding-top: 40px;
             }
         }
     }

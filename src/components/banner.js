@@ -43,10 +43,10 @@ const Banner = () => {
             duration: 6,
             y: 500
         }, '-=6')
-        .to(bannerText.current, {
-            duration: 6,
-            y: 700
-        }, '-=6')
+        // .to(bannerText.current, {
+        //     duration: 6,
+        //     y: 700
+        // }, '-=6')
         .to(layer2.current.imageRef.current, {
             duration: 6,
             y: 200
@@ -60,7 +60,7 @@ const Banner = () => {
             y: 0
         }, '-=6')
         
-        const sc = new ScrollScene({
+        new ScrollScene({
             triggerElement: component.current,
             gsap: {
                 timeline: tl,
@@ -79,28 +79,28 @@ const Banner = () => {
                     <Img 
                         ref={layer4} 
                         fluid={data.layerFour.childImageSharp.fluid} 
-                        style={{minHeight: '100vh'}} />
+                        style={{minHeight: '120vh'}} />
                 </div>
                 <div className="wrapper third">
                     <Img 
                         ref={layer3}
                         fluid={data.layerThree.childImageSharp.fluid} 
-                        style={{minHeight: '100vh'}} />
+                        style={{minHeight: '120vh'}} />
                 </div>
                 <div className="wrapper second">
                     <Img 
                         ref={layer2}
                         fluid={data.layerTwo.childImageSharp.fluid} 
-                        style={{minHeight: '100vh'}} />
+                        style={{minHeight: '120vh'}} />
                 </div>
                 <div className="wrapper first">
                     <Img 
                         ref={layer1}
                         fluid={data.layerOne.childImageSharp.fluid} 
-                        style={{minHeight: '100vh'}} />
+                        style={{minHeight: '120vh'}} />
                 </div>
+                <div ref={sectionBlur} className="wrapper blur"></div>
             </div>
-            <div ref={sectionBlur} className="blur"></div>
         </div>
     )
 }
